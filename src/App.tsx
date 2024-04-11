@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
-import CustomCard from "./components/CustomCard/CustomCard";
+import { ToastContainer, toast } from 'react-toastify';
+import { IoAddOutline } from "react-icons/io5";
+import 'react-toastify/dist/ReactToastify.css';
 
 //components
-import Navbar from "./components/Navbar/Navbar";
 import { IUsers, Role, User } from "./utils/interfaces";
 import { useSearch } from "./context/SearchContext";
 import { fetchUserListApi } from "./services/DataFetching";
+import Navbar from "./components/Navbar/Navbar";
+import CustomCard from "./components/CustomCard/CustomCard";
 import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
-import { IoAddOutline } from "react-icons/io5";
 
 
 function App() {
   const { searchTerm, setUsers, filteredUsers } = useSearch();
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchUsersList();
@@ -49,11 +51,16 @@ function App() {
     });
   };
 
+  const addButtonHandler=()=>{
+    toast.warn("Feature not implemented yet");
+  }
+
+
   return (
     <div className="app">
       <Navbar />
       <div className="container my-5 d-flex flex-column gap-5">
-        {loading ? (
+        {isLoading ? (
           <LoadingComponent/>
         ) : (
           <>
@@ -68,9 +75,10 @@ function App() {
             }
           </>
         )}
-        <div className="floating-button">
+        <div className="floating-button" onClick={addButtonHandler}>
             <IoAddOutline width={48} height={48} />
         </div>
+        <ToastContainer position="top-center" />
       </div>
     </div>
   );
