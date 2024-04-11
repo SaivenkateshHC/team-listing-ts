@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.navbar-component {
+    background-color: var(--primary-background-color);
+    padding: 0.5em 1rem;
+
+    .content {
+        max-width: 1440px;
+        margin: auto;;
+        
+        h2 {
+            font-weight: 400;
+            color: white;
+        }
+    }
+}

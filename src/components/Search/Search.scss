@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.search-component{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+    padding: 0.1rem 1em;
+    border: 1px solid var(--primary-background-color);
+    border-radius: 24px;
+    max-height: 48px;
+    width: 100%;
+    max-width: 300px;
+    input,
+    input:active,
+    input:focus{
+        width: 100%;
+        font-size: .75rem;
+        outline: none;
+        border: none;
+        background: transparent;
+        color: var(--primary-text-color);
+    }
+}
