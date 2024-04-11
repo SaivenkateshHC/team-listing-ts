@@ -1,0 +1,54 @@
+@import "./styles/variables.scss";
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+
+.app {
+  position: relative;
+  .section-title {
+    color: var(--heading-text-color);
+    margin-bottom: 24px;
+  }
+  .grid-wrapper {
+    display: grid;
+
+    
+
+    @media screen and (max-width: 768px){
+      grid-template-columns: 1fr ;
+      gap: 16px;
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      grid-template-columns: 1fr 1fr ;
+      gap: 20px;
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1440px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 28px;
+  }
+  .floating-button{
+    position: fixed;
+    bottom: 48px;
+    right: 48px;
+    background-color: var(--primary-background-color);
+    color: var(--light-text-color);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 100%;
+    z-index: 999;
+    font-size: 24px;
+  }
+  .floating-button:hover{
+    box-shadow: 0 0px 10px 5px #84a3f6a4;
+    transform: scale3d(1.05, 1.05, 1.05);
+    transition: all 0.3s ease-in-out;
+  }
+}
