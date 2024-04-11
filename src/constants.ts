@@ -1,0 +1,1 @@
+export const API = "https://nijin-server.vercel.app/api/"
